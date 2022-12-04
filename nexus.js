@@ -1,5 +1,3 @@
-// nexus.js
-
 class Nexus {
   constructor() {
     this.components = [];
@@ -21,7 +19,6 @@ class Nexus {
 class Component {
   constructor(props) {
     this.props = props;
-    this.state = {};
   }
 
   setState(state) {
@@ -31,10 +28,6 @@ class Component {
     // Re-render the component's user interface
     const root = document.getElementById("root");
     root.innerHTML = this.render();
-
-    // Call the componentDidMount method again to re-attach event listeners
-    // and perform any other actions that need to be done after the user interface
-    // has been re-rendered
     this.componentDidMount();
   }
 
@@ -43,8 +36,8 @@ class Component {
   }
 
   componentDidMount() {
-    // This method can be implemented by subclasses to attach event listeners
-    // and perform any other actions that need to be done after the user interface
-    // has been rendered
+    // This method can be implemented by subclasses
   }
 }
+
+export {Nexus, Component};
